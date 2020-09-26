@@ -1,0 +1,22 @@
+.coor-box{
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    border-top: solid;
+    background-color: cornflowerblue;
+}
+
+.coor-box > input{
+    width: 20%;
+    height: 25px;
+
+    border: none;
+    border-radius: 5px;
+}

@@ -1,0 +1,24 @@
+.cross{
+    // background-color: crimson;
+    // border: dotted crimson;
+    border-top: none;
+    border-left: none;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.cross__dot{
+    width: 30px;
+    height: 30px;
+
+    border-radius: 100px;
+
+    position: absolute;
+    right: -15px;
+    bottom: -15px;
+    z-index: 20;
+
+    background-color: darkgreen;
+}

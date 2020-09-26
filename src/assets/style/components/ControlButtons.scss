@@ -1,0 +1,36 @@
+.control-buttons{
+    width: 400px;
+    margin: 20px auto;
+    padding: 10px;
+
+    border: solid;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.control-buttons > button{
+    padding: 10px;
+
+    outline: none;
+    border: none;
+    border-radius: 10px;
+
+    transition: .2s box-shadow;
+}
+
+.control-buttons > button:active{
+    box-shadow: none;
+}
+
+.control-buttons__add-button{
+    background-color: #9CCC65;
+    box-shadow: 3px 3px #6B9B37;
+}
+
+.control-buttons__delete-button{
+    background-color: #D84315;
+    box-shadow: 3px 3px #9F0000;
+}
