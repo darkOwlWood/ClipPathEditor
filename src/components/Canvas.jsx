@@ -24,7 +24,7 @@ const Canvas = () => {
     const handleMouseClick = (event) => {
         if(addDotState){
             const { coorX, coorY } = getMouseCoorsRelativeTo(event,'.canvas');
-            dispatch(addCoorToList({x: coorX, y: coorY}));
+            dispatch(addCoorToList({x: coorX.toFixed(2), y: coorY.toFixed(2)}));
         }
     }    
 
@@ -38,7 +38,7 @@ const Canvas = () => {
                 coorX = coorX<0? 0 : coorX>100? 100 : coorX;
                 coorY = coorY<0? 0 : coorY>100? 100 : coorY;
                 
-                dispatch(updateCoorsInList({ ndx:currentDot, coors:{x: coorX, y: coorY}}))
+                dispatch(updateCoorsInList({ ndx:currentDot, coors:{x: coorX.toFixed(2), y: coorY.toFixed(2)}}))
             }
         }
      

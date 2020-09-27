@@ -4,7 +4,7 @@ export const coordnateSlice = createSlice({
     name: 'coordinates',
     initialState: {
         quantity: 3,
-        coorList: [{x:50, y:20}, {x:80, y:80}, {x:60, y:95}],     
+        coorList: [{x:'50', y:'20'}, {x:'80', y:'80'}, {x:'60', y:'95'}],     
     },
     reducers: {
         addCoorToList : (state, action) => {

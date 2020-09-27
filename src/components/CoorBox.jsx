@@ -1,20 +1,38 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { getCoorsById } from '../slices/coordinatesSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateCoorsInList, getCoorsById } from '../slices/coordinatesSlice';
 import '../assets/style/components/CoorBox.scss';
+
+const validateOnlyNumbers = string => {
+    let resp = '';
+
+    if(RegExp(/^0\d+\.?\d{0,2}$/).test(string)){ //0Number[.Number]
+        resp = string.slice(1);
+    }else if(RegExp(/^\.\d{0,2}$/).test(string)){//.[Number]
+        resp = `0${string}`;
+    }else if(RegExp(/^\d+\.?\d{0,2}$/).test(string)){//Number[.Number]
+        resp = string;
+    }else if(!string.trim()){// Blank Space
+        resp = '0';
+    }
+
+    return resp;
+}
 
 const CoorBox = ({id}) => {
     
+    const dipatch = useDispatch();
     const coorsState = useSelector(getCoorsById(id)); 
 
-    // useEffect( () => {
-    //     setCoorsState(coors);
-    // });
+    const hableChangeState = (event) => {
 
-    const hableChangeState = (event,coor) => {
-        const coorsState__copy = {...coorsState};
-        coorsState__copy[coor] = event.target.value;
-        setCoorsState(coorsState__copy);
+        const resp = validateOnlyNumbers(event.target.value);
+
+        if(resp && Number(resp) <= 100){
+            const coor = event.target.name === 'coorX'? 'x' : 'y';
+            const coors = { ...coorsState, [coor] : resp }
+            dipatch(updateCoorsInList({ coors, ndx: id}));
+        }
     }
 
     return (
@@ -24,15 +42,15 @@ const CoorBox = ({id}) => {
             <input 
                 type="text" 
                 name="coorX"
-                value={Number(coorsState.x).toFixed(3)} 
-                onChange={ (event) => setCoorsState({...coorsState, x: event.target.value}) }
+                value={coorsState.x} 
+                onChange={hableChangeState}
             />
             <label htmlFor="coorX">Y</label>
             <input 
                 type="text" 
                 name="coorY" 
-                value={Number(coorsState.y).toFixed(3)}
-                onChange={ (event) => setCoorsState({...coorsState, y: event.target.value}) }
+                value={coorsState.y}
+                onChange={hableChangeState}
             />
         </div>
     );
