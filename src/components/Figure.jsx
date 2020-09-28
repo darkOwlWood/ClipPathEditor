@@ -7,7 +7,7 @@ const Figure = () => {
     
     const coorsList = useSelector(getCoorsList);
     const style = {
-        clipPath: `polygon(${coorsList.map(obj => `${Number(obj.x)}% ${Number(obj.y) }%`).join(',')})`,
+        clipPath: `polygon(${coorsList.map(obj => `${Number(obj.x)}%  ${Number(obj.y) }%`).join(',')})`,
     };
     
     return (

@@ -20,10 +20,15 @@ export const coordnateSlice = createSlice({
         updateCoorsInList : (state, action) => {
             state.coorList[action.payload.ndx] = action.payload.coors;
         },
+
+        setCoorList: (state, action) => {
+            state.quantity = action.payload.quantity;
+            state.coorList = action.payload.coorList;
+        }
     }
 });
 
-export const {addCoorToList, removeCoorFromList, updateCoorsInList} = coordnateSlice.actions;
+export const {addCoorToList, removeCoorFromList, updateCoorsInList, setCoorList} = coordnateSlice.actions;
 
 export const getCoorsById = id => state => state.coordinates.coorList[id];
 

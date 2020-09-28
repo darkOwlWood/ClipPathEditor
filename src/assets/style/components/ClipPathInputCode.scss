@@ -1,0 +1,24 @@
+.clip-path-input-code{
+    width: 70%;
+    height: 60px;
+    padding: 10px;
+    
+    border: solid;
+
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clip-path-input-code > input{
+    width: 100%;
+    padding: 5px;
+
+    outline: none;
+    border: none;
+    border-radius: 5px;
+
+    background-color: whitesmoke;
+}
