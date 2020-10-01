@@ -1,21 +1,23 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { addCoorToList, updateCoorsInList, getCoorsQuantity } from '../slices/coordinatesSlice';
+import { addCoorToList, updateCoorsInList, getCoorsList } from '../slices/coordinatesSlice';
 import { setCurrentDot, getDeleteDotState, getAddDotState, getCurrentDot } from '../slices/operationSlice';
 import '../assets/style/components/Canvas.scss';
 import Cross from './Cross';
 import Figure from './Figure';
 
+
 const getMouseCoorsRelativeTo = (event, element) => {
     const {x, y, width, height} = document.querySelector(element).getBoundingClientRect();
     let coorX = ((event.clientX - x) * 100) / width;
     let coorY = ((event.clientY - y) * 100) / height;
-            
+    
     return {coorX, coorY};
 }
 
 const Canvas = () => {
 
+    const coorsList = useSelector(getCoorsList);
     const currentDot = useSelector(getCurrentDot);
     const deleteDotState = useSelector(getDeleteDotState);
     const addDotState = useSelector(getAddDotState);
@@ -28,7 +30,7 @@ const Canvas = () => {
         }
     }    
 
-    useEffect( () => {  
+    useEffect( () => {
         const handleMousePosition = (event) => {
             event.preventDefault(); 
     
@@ -52,14 +54,14 @@ const Canvas = () => {
             window.removeEventListener('mouseup', setCurrentDotToNull);
             window.removeEventListener('mousemove', handleMousePosition);
         }
-    });
+    },[currentDot,deleteDotState,addDotState]);
 
     return (
       <div className="canvas" onClick={handleMouseClick}>
-        {Array(useSelector(getCoorsQuantity)).fill(0).map( (val,ndx) => 
-            <Cross id={ndx} key={ndx}/> 
+        {coorsList.map( (coors,ndx) => 
+            <Cross key={ndx} id={ndx} y={coors.y} x={coors.x}/> 
         )}
-        <Figure />
+        <Figure coorsList={coorsList}/>
       </div>
     );
 }

@@ -29,7 +29,7 @@ const ClipPathInputCode = () => {
                                 .match(/\d{1,3}(\.\d{1,2})?/g)
                                 .map( (val,ndx,arr) => ({x:arr[ndx], y:arr[ndx+1]}) )
                                 .filter( (val,ndx) => ndx%2 === 0 )
-            dispatch(setCoorList({ coorList, quantity: coorList.length }));
+            dispatch(setCoorList({ coorList }));
         }
     }
 

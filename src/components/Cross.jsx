@@ -1,18 +1,19 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { removeCoorFromList, getCoorsById } from '../slices/coordinatesSlice';
+import { removeCoorFromList } from '../slices/coordinatesSlice';
 import { setCurrentDot, getDeleteDotState } from '../slices/operationSlice';
 import '../assets/style/components/Cross.scss';
 
-const Cross = React.memo(({id}) => {
+const Cross = React.memo(({id, x, y}) => {
+
+    console.log('Render child ',id)
 
     const dispatch = useDispatch();
-    const coors = useSelector(getCoorsById(id));
     const deleteDotState =  useSelector(getDeleteDotState);
 
     const style = {
-        width: `${coors.x}%`,
-        height: `${coors.y}%`,
+        width: `${x}%`,
+        height: `${y}%`,
     }
 
     const handleDeleteDotFromCoorList = () => {

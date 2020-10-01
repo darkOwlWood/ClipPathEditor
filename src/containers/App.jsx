@@ -5,6 +5,7 @@ import ControlButtons from '../components/ControlButtons'
 import CoorListBox from '../components/CoorListBox';
 import ClipPathOutputCode from '../components/ClipPathOutputCode';
 import ClipPathInputCode from '../components/ClipPathInputCode';
+import PolygonListBox from '../components/PolygonListBox';
 
 const App = () => {
     return (
@@ -14,6 +15,7 @@ const App = () => {
             <ClipPathOutputCode />
             <ClipPathInputCode/>
             <ControlButtons/>
+            <PolygonListBox />
         </div>
     );
 }
