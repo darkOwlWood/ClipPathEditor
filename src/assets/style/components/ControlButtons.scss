@@ -1,14 +1,15 @@
 .control-buttons{
-    width: 400px;
-    margin: 20px auto;
+    width: 100%;
+    height: 70px;
     padding: 10px;
 
-    border: solid;
     box-sizing: border-box;
 
     display: flex;
     justify-content: space-around;
     align-items: center;
+
+    background-color: #4e89ae;
 }
 
 .control-buttons > button{
@@ -21,8 +22,8 @@
     transition: .2s box-shadow;
 }
 
-.control-buttons > button:active{
-    box-shadow: none;
+.control-buttons > button > img{
+    width: 25px;
 }
 
 .control-buttons__add-button{
@@ -30,7 +31,29 @@
     box-shadow: 3px 3px #6B9B37;
 }
 
-.control-buttons__delete-button{
+.control-buttons__del-button{
     background-color: #D84315;
     box-shadow: 3px 3px #9F0000;
+}
+
+.control-buttons__add-button--selected{
+    background-color: #6B9B37;
+    box-shadow: none;
+}
+
+.control-buttons__del-button--selected{
+    background-color: #9F0000;
+    box-shadow: none;
+}
+
+@media(min-width: 770px){
+    .control-buttons{
+        width: 30%;
+        height: 15%;
+        order: 4;
+    }
+
+    .control-buttons > button > img{
+        width: 30px;
+    }
 }

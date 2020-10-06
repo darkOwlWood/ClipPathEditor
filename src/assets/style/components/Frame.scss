@@ -1,5 +1,21 @@
 .frame{
-    width: 70%;
+    width: 100%;
+    height: 500px;
+    padding: 20px;
 
-    outline: solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+
+    // border: solid 10px #ed6663;
+    background-color: #4e89ae;
+}
+
+@media(min-width: 770px){
+    .frame{
+        width: 70%;
+        height: 85%;
+    }
 }

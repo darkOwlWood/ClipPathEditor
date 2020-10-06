@@ -1,5 +1,4 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import '../assets/style/components/Figure.scss';
 
 const Figure = React.memo(({coorsList}) => {

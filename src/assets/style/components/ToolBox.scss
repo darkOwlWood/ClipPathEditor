@@ -1,0 +1,17 @@
+.tool-box{
+    width: 100%;
+    max-height: 500px;
+    position: relative;
+
+    color: #FFD7C1;
+    background-color:  #43658b;
+}
+
+@media(min-width: 770px){
+    .tool-box{
+        width: 30%;
+        height: 85%;
+        max-height: none;
+        order: 2;
+    }
+}

@@ -10,3 +10,15 @@ body{
     display: flex;
     flex-wrap: wrap;
 }
+
+@media(min-width: 770px){
+    .app{
+        height: 100vh;
+    }
+}
+
+@media(min-width: 770px) and (max-height: 400px){
+    .app{
+        height: 600px;
+    }
+}

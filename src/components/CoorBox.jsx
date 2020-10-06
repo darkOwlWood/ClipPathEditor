@@ -37,7 +37,7 @@ const CoorBox = ({id}) => {
 
     return (
         <div className="coor-box">
-            <span className="coor-box__id">Dot id: {id}</span>
+            <span className="coor-box__id">Dot: {id}</span>
             <label htmlFor="coorX">X</label>
             <input 
                 type="text" 

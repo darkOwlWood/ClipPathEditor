@@ -1,11 +1,12 @@
 .polygon-box{
-    width: 19%;
+    width: 70px;
     height: 70px;
     padding: 5px;
+    margin: 0 2px 5px;
 
     box-sizing: border-box;
 
-    background-color: cornflowerblue;
+    background-color: #4e89ae;
 }
 
 .polygon-box__wrapper{
@@ -14,5 +15,5 @@
 
     position: relative;
 
-    background-color: darkblue;
+    // background-color: #ffa372;
 }

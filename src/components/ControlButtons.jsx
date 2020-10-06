@@ -2,6 +2,8 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {activateDeleteDot, deactivateDeleteDot, getDeleteDotState,
         activateAddDot, deactivateAddDot, getAddDotState } from '../slices/operationSlice';
+import plusIcon from '../assets/static/plus-icon.png';
+import minusIcon from '../assets/static/minus-icon.png';
 import '../assets/style/components/ControlButtons.scss';
 
 const ControlButtons = () => {
@@ -28,8 +30,18 @@ const ControlButtons = () => {
 
     return (
         <div className="control-buttons">
-            <button className="control-buttons__add-button" onClick={handleAddDotState}>Add dot</button>
-            <button className="control-buttons__delete-button" onClick={handleDeleteDotState}>Delete dot</button>
+            <button 
+                className={`control-buttons__add-button ${addDotState && 'control-buttons__add-button--selected'}`} 
+                onClick={handleAddDotState}
+            >
+                <img src={plusIcon} alt="add dot to canvas"/>
+            </button>
+            <button 
+                className={`control-buttons__del-button ${deleteDotState && 'control-buttons__del-button--selected'}`} 
+                onClick={handleDeleteDotState}
+            >
+                <img src={minusIcon} alt="remove dot from the canvas"/>
+            </button>
         </div>
     );
 }

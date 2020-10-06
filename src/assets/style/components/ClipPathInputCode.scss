@@ -1,15 +1,15 @@
 .clip-path-input-code{
-    width: 70%;
-    height: 60px;
+    width: 100%;
+    height: 70px;
     padding: 10px;
-    
-    border: solid;
 
     box-sizing: border-box;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    background-color: #43658b;
 }
 
 .clip-path-input-code > input{
@@ -20,5 +20,20 @@
     border: none;
     border-radius: 5px;
 
+    font-weight: bolder;
+
     background-color: whitesmoke;
+}
+
+@media(min-width: 770px){
+    .clip-path-input-code{
+        width: 70%;
+        height: 15%;
+        order: 3;
+    }
+
+    .clip-path-input-code > input{
+        height: 30px;
+        font-size: 1.1em;
+    }
 }

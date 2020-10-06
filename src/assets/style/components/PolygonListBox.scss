@@ -1,13 +1,12 @@
 .polygon-list-box{
-    width: 30%;
-    height: 150px;
+    height: 100%;
     padding: 10px;
 
-    border: solid;
+    box-sizing: border-box;
 
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    align-content: space-between;
+    align-content: center;
 }
