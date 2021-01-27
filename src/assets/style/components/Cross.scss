@@ -13,6 +13,7 @@
     width: 30px;
     height: 30px;
 
+    cursor: grab;
     border-radius: 100px;
 
     position: absolute;
@@ -21,4 +22,8 @@
     z-index: 20;
 
     background-color: rgba(67, 101, 139,.5);
+}
+
+.cross__dot:active{
+    cursor: grabbing
 }
